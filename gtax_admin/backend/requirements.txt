@@ -17,6 +17,7 @@ aiosqlite>=0.19.0
 pandas>=2.1.0
 numpy>=1.26.0
 scipy>=1.11.0
+pytz>=2023.3
 
 # Technical Analysis
 ta>=0.11.0
@@ -48,6 +49,11 @@ httpx>=0.25.0
 aiohttp>=3.9.0
 requests>=2.31.0
 feedparser>=6.0.0
+
+# Indian Broker APIs
+kiteconnect>=4.2.0  # Zerodha Kite
+# upstox-python-sdk>=2.0.0  # Upstox (uncomment if needed)
+# smartapi-python>=1.3.0  # Angel One (uncomment if needed)
 
 # Utilities
 python-dotenv>=1.0.0
