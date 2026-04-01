@@ -1,0 +1,516 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background-color: #0f0f1a;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Login Page */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
+}
+
+.login-card {
+  background: #1a1a2e;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #2a2a4a;
+}
+
+.login-card h1 {
+  text-align: center;
+  margin-bottom: 8px;
+  color: #00d9ff;
+  font-size: 28px;
+}
+
+.login-card p {
+  text-align: center;
+  color: #8888aa;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #aaaacc;
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #3a3a5a;
+  border-radius: 8px;
+  background: #0f0f1a;
+  color: #ffffff;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #00d9ff;
+}
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00d9ff 0%, #00a8cc 100%);
+  color: #0f0f1a;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 217, 255, 0.3);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.error-message {
+  background: rgba(255, 77, 77, 0.1);
+  border: 1px solid #ff4d4d;
+  color: #ff4d4d;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.toggle-auth {
+  text-align: center;
+  margin-top: 20px;
+  color: #8888aa;
+}
+
+.toggle-auth button {
+  background: none;
+  border: none;
+  color: #00d9ff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.toggle-auth button:hover {
+  text-decoration: underline;
+}
+
+/* Dashboard Layout */
+.dashboard {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background: #1a1a2e;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #2a2a4a;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-brand h1 {
+  font-size: 24px;
+  color: #00d9ff;
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar-user span {
+  color: #aaaacc;
+}
+
+.btn-logout {
+  background: transparent;
+  border: 1px solid #ff4d4d;
+  color: #ff4d4d;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-logout:hover {
+  background: rgba(255, 77, 77, 0.1);
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Search Bar */
+.search-container {
+  margin-bottom: 32px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  max-width: 500px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 14px 20px;
+  padding-left: 48px;
+  border: 1px solid #3a3a5a;
+  border-radius: 12px;
+  background: #1a1a2e;
+  color: #ffffff;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #00d9ff;
+  box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8888aa;
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #1a1a2e;
+  border: 1px solid #3a3a5a;
+  border-radius: 12px;
+  margin-top: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.search-result-item {
+  padding: 12px 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #2a2a4a;
+  transition: background 0.3s;
+}
+
+.search-result-item:hover {
+  background: #2a2a4a;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-symbol {
+  font-weight: 600;
+  color: #00d9ff;
+}
+
+.search-result-name {
+  color: #aaaacc;
+  font-size: 14px;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.dashboard-card {
+  background: #1a1a2e;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #2a2a4a;
+}
+
+.dashboard-card h2 {
+  font-size: 18px;
+  color: #aaaacc;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Stock List */
+.stock-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stock-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #0f0f1a;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.stock-item:hover {
+  transform: translateX(4px);
+  background: #2a2a4a;
+}
+
+.stock-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stock-symbol {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.stock-name {
+  font-size: 12px;
+  color: #8888aa;
+}
+
+.stock-price-info {
+  text-align: right;
+}
+
+.stock-price {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.stock-change {
+  font-size: 12px;
+}
+
+.stock-change.positive {
+  color: #00ff88;
+}
+
+.stock-change.negative {
+  color: #ff4d4d;
+}
+
+/* Stock Detail */
+.stock-detail {
+  background: #1a1a2e;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #2a2a4a;
+  margin-bottom: 32px;
+}
+
+.stock-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.stock-detail-info h2 {
+  font-size: 28px;
+  color: #00d9ff;
+  margin-bottom: 4px;
+}
+
+.stock-detail-info p {
+  color: #8888aa;
+}
+
+.stock-detail-price {
+  text-align: right;
+}
+
+.current-price {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.price-change {
+  font-size: 18px;
+}
+
+.btn-back {
+  background: transparent;
+  border: 1px solid #3a3a5a;
+  color: #aaaacc;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 16px;
+  transition: all 0.3s;
+}
+
+.btn-back:hover {
+  border-color: #00d9ff;
+  color: #00d9ff;
+}
+
+/* Chart Container */
+.chart-container {
+  background: #0f0f1a;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.chart-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.chart-tab {
+  padding: 8px 16px;
+  border: 1px solid #3a3a5a;
+  border-radius: 8px;
+  background: transparent;
+  color: #aaaacc;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.chart-tab.active {
+  background: #00d9ff;
+  color: #0f0f1a;
+  border-color: #00d9ff;
+}
+
+.chart-tab:hover:not(.active) {
+  border-color: #00d9ff;
+  color: #00d9ff;
+}
+
+/* Price Table */
+.price-table-container {
+  overflow-x: auto;
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.price-table th,
+.price-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #2a2a4a;
+}
+
+.price-table th {
+  color: #8888aa;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.price-table td {
+  color: #ffffff;
+}
+
+.price-table tr:hover td {
+  background: rgba(0, 217, 255, 0.05);
+}
+
+/* Loading Spinner */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #3a3a5a;
+  border-top-color: #00d9ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .dashboard-content {
+    padding: 16px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stock-detail-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .stock-detail-price {
+    text-align: left;
+  }
+}
